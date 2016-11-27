@@ -1,0 +1,13 @@
+stock_name=#app-wrap > div.stock-info > div > h1 > a
+close_price=#app-wrap > div.stock-info > div > div.price.s-up > strong
+price_chg=#app-wrap > div.stock-info > div > div.price.s-up > span:nth-of-type(2)
+price_chg_ratio=#app-wrap > div.stock-info > div > div.price.s-up > span:nth-of-type(3)
+open_price=#app-wrap > div.stock-info > div > div.bets-content > div.line1 > dl:nth-of-type(1) > dd
+last_close_price=#app-wrap > div.stock-info > div > div.bets-content > div.line2 > dl:nth-of-type(1) > dd
+price_top=#app-wrap > div.stock-info > div > div.bets-content > div.line1 > dl:nth-of-type(3) > dd
+price_low=#app-wrap > div.stock-info > div > div.bets-content > div.line2 > dl:nth-of-type(3) > dd
+cache_flow_size=#app-wrap > div.stock-info > div > div.bets-content > div.line1 > dl:nth-of-type(2) > dd
+cache_flow_total=#app-wrap > div.stock-info > div > div.bets-content > div.line1 > dl:nth-of-type(6) > dd
+stock_total=#app-wrap > div.stock-info > div > div.bets-content > div.line1 > dl:nth-of-type(11) > dd
+stock_available_total=#app-wrap > div.stock-info > div > div.bets-content > div.line2 > dl:nth-of-type(11) > dd
+commission_ratio=#app-wrap > div.stock-info > div > div.bets-content > div.line1 > dl:nth-of-type(7) > dd
