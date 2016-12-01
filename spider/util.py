@@ -14,3 +14,5 @@ def load_stocks():
             line = f.readline()
     return stock_list
 
+if __name__ == '__main__':
+    pprint.pprint(load_stocks())
