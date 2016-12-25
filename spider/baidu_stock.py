@@ -2,6 +2,7 @@ import requests
 import re
 import pprint
 from bs4 import BeautifulSoup
+from util import load_stocks
 
 
 def parse_content(stock_url):
@@ -25,14 +26,20 @@ def parse_content(stock_url):
 def main():
     # url = 'https://gupiao.baidu.com/stock/sh510130.html'
     for stockinfo in load_stocks():
-        url = 'https://gupiao.baidu.com/stock/sh{0}.html'.format(stockinfo[0])
-        stock = parse_content(url)
+        stock_id = stockinfo[0]
+        url = 'https://gupiao.baidu.com/stock/sh{0}.html'.format(stock_id)
+        try:
+            stock = parse_content(url)
+        except:
+            print('skip ' + stock_id)
+        else:
+            print('try to save:' + str(stock))
 
-    with open('config/stock_ref.props', 'r') as f:
-        d = dict((x.split('=')[0:2]) for x in f.readlines())
-    p = parse_content(url)
-    pp = pprint.PrettyPrinter(indent=4)
-    pp.pprint(p)
+    # with open('config/stock_ref.props', 'r') as f:
+    #     d = dict((x.split('=')[0:2]) for x in f.readlines())
+    # p = parse_content(url)
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(p)
 
 if __name__ == '__main__':
     main()
